@@ -490,13 +490,13 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 1.4rem;
-    margin-left: 1rem;
+    width: 100%;
 }
 
 .mcube-svg {
-    width: 360px;
+    width: 100%;
+    max-width: 640px;
     height: auto;
-    max-width: 100%;
     filter: drop-shadow(0 20px 18px rgba(0,0,0,0.35));
 }
 
@@ -548,7 +548,7 @@ nav {
 
 .cube-info {
     width: 100%;
-    max-width: 380px;
+    max-width: 640px;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.12);
     padding: 1.2rem 1.5rem;
