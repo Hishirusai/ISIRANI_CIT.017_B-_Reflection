@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHARIFF ISIRANI | Reflection</title>
+    <link rel="icon" type="image/png" href="HISHI.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="TRANSPARENT SI LOGO.png" alt="SI Logo" class="nav-logo">
+            <div class="logo-text">SHARIFF ISIRANI</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-links desktop-nav">
+                <a href="#about">About</a>
+                <a href="#expertise">Expertise</a>
+                <a href="#journal">Journal</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <img src="yay.jpg" alt="Shariff Hero Background" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <p class="hero-subtitle">UI/UX DESIGNER • FRONTEND DEV • VIDEO EDITOR • GRAPHIC DESIGNER</p>
+            <p class="hero-brand">SHARIFF ISIRANI</p>
+            <a class="hero-link" href="https://classroom.google.com/c/ODU1NTI0NDEzOTQw" target="_blank">CIT.017 B 1-2026-2027</a>
+            <p class="hero-slogan">"Building Systems, Designing Worlds."</p>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-copy">
+                <p class="section-kicker">ABOUT ME</p>
+                <h2>HI, I AM<br>SHARIFF!</h2>
+                <p>I am a third-year BSIT student and Centennial Scholar at Ateneo de Zamboanga University. My work is defined by the intersection of clinical system logic and high-fidelity visual storytelling.</p>
+            </div>
+            <div class="about-visual">
+                <img src="ABOUTME.png" alt="Shariff Isirani">
+                <p>Deploying: BFP Inventory Management System</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="expertise-header">
+            <h2>EXPERTISE</h2>
+        </div>
+        <div class="container expertise-grid">
+            <div class="skill-box"><h4>VS Code</h4><p>Code Editor</p></div>
+            <div class="skill-box"><h4>Figma</h4><p>Interface Design</p></div>
+            <div class="skill-box"><h4>Penpot</h4><p>Open Source UI</p></div>
+            <div class="skill-box"><h4>Ibis Paint</h4><p>Digital Art</p></div>
+            <div class="skill-box"><h4>Affinity</h4><p>Vector Art</p></div>
+            <div class="skill-box"><h4>Canva</h4><p>Layouts</p></div>
+            <div class="skill-box"><h4>React</h4><p>Frontend</p></div>
+            <div class="skill-box"><h4>Tailwind</h4><p>Styling</p></div>
+            <div class="skill-box"><h4>Vite</h4><p>Build Tools</p></div>
+            <div class="skill-box"><h4>GitHub</h4><p>Version</p></div>
+            <div class="skill-box"><h4>Framer</h4><p>Prototyping</p></div>
+            <div class="skill-box"><h4>Blender</h4><p>3D Modeling</p></div>
+        </div>
+    </section>
+
+    <section id="journal" class="journal">
+        <div class="container journal-header">
+            <p class="section-kicker">MY WORK</p>
+            <h2>MY INSIGHT REFLECTION</h2>
+        </div>
+
+        <div class="container reflection-panel">
+            <div class="reflection-copy">
+                <h3>REFLECTION</h3>
+                <p>In the week that I learned about the McCumber Cube, CIA Triad, and the AAA framework, I realized that protecting information goes far beyond just setting a strong password. The CIA Triad reminds us that information must remain confidential, maintain integrity, and remain available to authorized users.</p>
+                <p>The McCumber Cube expanded my understanding by showing that security must be viewed in terms of information states, security goals, and countermeasures. It reminded me that technology, people, and policies all work together in a secure environment.</p>
+                <p>As a third-year IT student, I believe understanding these principles is the difference between simply building a system and building one that is dependable and resilient. Security by Design stood out to me because protection should be integrated from the start, not added later.</p>
+            </div>
+
+            <div class="cube-wrap">
+                <div class="mcube-scene">
+                    <div class="mcube" aria-label="McCumber cube">
+                        <button class="mcube-face mcube-front is-active" data-key="confidentiality"><span>Confidentiality</span></button>
+                        <button class="mcube-face mcube-left" data-key="integrity"><span>Integrity</span></button>
+                        <button class="mcube-face mcube-top" data-key="availability"><span>Availability</span></button>
+                        <button class="mcube-face mcube-back" data-key="storage"><span>Storage</span></button>
+                        <button class="mcube-face mcube-right" data-key="processing"><span>Processing</span></button>
+                        <button class="mcube-face mcube-bottom" data-key="transmission"><span>Transmission</span></button>
+                    </div>
+                </div>
+
+                <div class="cube-info">
+                    <h4 id="cube-title">Confidentiality</h4>
+                    <p id="cube-text">Confidentiality means keeping information hidden from people who are not allowed to see it. This helps protect private data and prevents unauthorized access to sensitive information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; 2026 SHARIFF ISIRANI. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const cubeDetails = {
+            confidentiality: {
+                title: 'Confidentiality',
+                text: 'Confidentiality means keeping information hidden from people who are not allowed to see it. This helps protect private data and prevents unauthorized access to sensitive information.'
+            },
+            integrity: {
+                title: 'Integrity',
+                text: 'Integrity ensures information stays accurate, complete, and trustworthy. It reminds us that data should not be altered or damaged by unauthorized changes.'
+            },
+            availability: {
+                title: 'Availability',
+                text: 'Availability means authorized users can access systems and data whenever they need them. A secure system must stay dependable and usable during normal operations.'
+            },
+            storage: {
+                title: 'Storage',
+                text: 'Storage focuses on protecting information while it sits on devices, servers, or databases. This includes safeguards against theft, damage, or misuse of saved data.'
+            },
+            processing: {
+                title: 'Processing',
+                text: 'Processing covers information while it is being used, manipulated, or analyzed. A secure process keeps data protected even while the system is actively working with it.'
+            },
+            transmission: {
+                title: 'Transmission',
+                text: 'Transmission protects information while it moves across networks and communication channels. This is important because data is vulnerable during transfer between devices and systems.'
+            }
+        };
+
+        const cube = document.querySelector('.mcube');
+        const faces = document.querySelectorAll('.mcube-face');
+        const cubeTitle = document.getElementById('cube-title');
+        const cubeText = document.getElementById('cube-text');
+
+        if (cube) {
+            cube.addEventListener('pointermove', (event) => {
+                const rect = cube.getBoundingClientRect();
+                const px = (event.clientX - rect.left) / rect.width;
+                const py = (event.clientY - rect.top) / rect.height;
+                const rx = -18 + (0.5 - py) * 16;
+                const ry = 30 + (px - 0.5) * 24;
+                cube.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+            });
+
+            cube.addEventListener('pointerleave', () => {
+                cube.style.transform = 'rotateX(-18deg) rotateY(30deg)';
+            });
+        }
+
+        faces.forEach((face) => {
+            face.addEventListener('click', () => {
+                const key = face.dataset.key;
+                const info = cubeDetails[key] || cubeDetails.confidentiality;
+
+                faces.forEach(item => item.classList.remove('is-active'));
+                face.classList.add('is-active');
+                cubeTitle.textContent = info.title;
+                cubeText.textContent = info.text;
+            });
+        });
+    </script>
+</body>
+</html>
