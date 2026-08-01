@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHARIFF ISIRANI | Reflection</title>
+    <title>SHARIFF ISIRANI | Portfolio</title>
     <link rel="icon" type="image/png" href="HISHI.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="yay.jpg">
 </head>
+<!-- Background Music -->
+<audio id="bg-music" src="mixkit-game-level-music-689.wav" loop></audio>
+
+<!-- Music Toggle Button -->
+<button id="music-btn" onclick="toggleMusic()" title="Toggle Music">♪</button>
+
 <body>
+
+    <!-- // LIGHTBOX PART -->
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-bg" class="lightbox-blur-bg" src="" alt="">
+        <div class="lightbox-frame">
+            <img id="lightbox-img" src="" alt="Large View">
+        </div>
+    </div>
+
+    <!-- // NAVIGATION PART -->
     <nav>
         <div class="nav-brand">
             <img src="TRANSPARENT SI LOGO.png" alt="SI Logo" class="nav-logo">
@@ -17,109 +34,272 @@
             <div class="nav-links desktop-nav">
                 <a href="#about">About</a>
                 <a href="#expertise">Expertise</a>
-                <a href="#journal">Journal</a>
+                <a href="#portfolio">Journal</a>
             </div>
+            <img src="ic_menu.png" alt="Menu" class="menu-icon" onclick="toggleMenu()">
         </div>
     </nav>
 
+    <!-- // MOBILE MENU DROPDOWN -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#expertise" onclick="toggleMenu()">Expertise</a>
+        <a href="#portfolio" onclick="toggleMenu()">Journal</a>
+    </div>
+
+    <!-- // HEADER PART -->
     <header class="hero">
-        <img src="yay.jpg" alt="Shariff Hero Background" class="hero-bg">
-        <div class="hero-overlay"></div>
-        <div class="hero-content container">
-            <p class="hero-subtitle">UI/UX DESIGNER • FRONTEND DEV • VIDEO EDITOR • GRAPHIC DESIGNER</p>
-            <p class="hero-brand">SHARIFF ISIRANI</p>
-            <a class="hero-link" href="https://classroom.google.com/c/ODU1NTI0NDEzOTQw" target="_blank">CIT.017 B 1-2026-2027</a>
-            <p class="hero-slogan">"Building Systems, Designing Worlds."</p>
+        <img src="yay.jpg" alt="Shariff Hero Background" class="hero-hero" fetchpriority="high">
+        <img src="CodeLink.png" alt="" class="hero-codelink">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+            <h2 class="hero-subtitle">
+                UI/UX DESIGNER <span class="hero-dot">•</span>
+                FRONTEND DEV <span class="hero-dot">•</span>
+                VIDEO EDITOR <span class="hero-dot">•</span>
+                GRAPHIC DESIGNER
+            </h2>
+            <p class="hero-brand-tag">SHARIFF ISIRANI</p>
+            <a href="https://classroom.google.com/c/ODU1NTI0NDEzOTQw" target="_blank" class="hero-name hero-classroom">CIT.017 B 1-2026-2027</a>
+            <p class="slogan">"Building Systems, Designing Worlds."</p>
         </div>
     </header>
 
-    <section id="about" class="about">
+    <!-- // ABOUT ME SECTION -->
+    <section id="about">
+        <div class="about-bg-container">
+            <img src="coding-pov.png" alt="" class="about-bg-img" loading="lazy">
+            <div class="about-bg-shade"></div>
+        </div>
         <div class="container about-grid">
-            <div class="about-copy">
-                <p class="section-kicker">ABOUT ME</p>
-                <h2>HI, I AM<br>SHARIFF!</h2>
-                <p>I am a third-year BSIT student and Centennial Scholar at Ateneo de Zamboanga University. My work is defined by the intersection of clinical system logic and high-fidelity visual storytelling.</p>
+            <div class="about-text">
+                <h3 class="section-label-big montserrat">ABOUT ME</h3>
+                <h2 class="massive-title">HI, I AM<br>SHARIFF!</h2>
+                <p class="big-bio montserrat">
+                    I am a third-year BSIT student and Centennial Scholar at Ateneo de Zamboanga University. My work is defined by the intersection of clinical system logic and high-fidelity visual storytelling.
+                </p>
             </div>
             <div class="about-visual">
-                <img src="ABOUTME.png" alt="Shariff Isirani">
-                <p>Deploying: BFP Inventory Management System</p>
+                <div class="portrait-container">
+                    <img src="ABOUTME.png" alt="Shariff Isirani" class="portrait-img" loading="lazy">
+                    <div class="portrait-overlay"></div>
+                </div>
+                <p class="deploy-caption montserrat">Deploying: BFP Inventory Management System</p>
             </div>
         </div>
     </section>
 
-    <section id="expertise" class="expertise">
+    <!-- // EXPERTISE PART -->
+    <section id="expertise">
         <div class="expertise-header">
-            <h2>EXPERTISE</h2>
+            <div class="expertise-overlay"></div>
+            <h1>EXPERTISE</h1>
         </div>
-        <div class="container expertise-grid">
-            <div class="skill-box"><h4>VS Code</h4><p>Code Editor</p></div>
-            <div class="skill-box"><h4>Figma</h4><p>Interface Design</p></div>
-            <div class="skill-box"><h4>Penpot</h4><p>Open Source UI</p></div>
-            <div class="skill-box"><h4>Ibis Paint</h4><p>Digital Art</p></div>
-            <div class="skill-box"><h4>Affinity</h4><p>Vector Art</p></div>
-            <div class="skill-box"><h4>Canva</h4><p>Layouts</p></div>
-            <div class="skill-box"><h4>React</h4><p>Frontend</p></div>
-            <div class="skill-box"><h4>Tailwind</h4><p>Styling</p></div>
-            <div class="skill-box"><h4>Vite</h4><p>Build Tools</p></div>
-            <div class="skill-box"><h4>GitHub</h4><p>Version</p></div>
-            <div class="skill-box"><h4>Framer</h4><p>Prototyping</p></div>
-            <div class="skill-box"><h4>Blender</h4><p>3D Modeling</p></div>
-        </div>
-    </section>
-
-    <section id="journal" class="journal">
-        <div class="container journal-header">
-            <p class="section-kicker">MY WORK</p>
-            <h2>MY INSIGHT REFLECTION</h2>
-        </div>
-
-        <div class="container reflection-panel">
-            <div class="reflection-copy">
-                <h3>REFLECTION</h3>
-                <p>In the week that I learned about the McCumber Cube, CIA Triad, and the AAA framework, I realized that protecting information goes far beyond just setting a strong password. The CIA Triad reminds us that information must remain confidential, maintain integrity, and remain available to authorized users.</p>
-                <p>The McCumber Cube expanded my understanding by showing that security must be viewed in terms of information states, security goals, and countermeasures. It reminded me that technology, people, and policies all work together in a secure environment.</p>
-                <p>As a third-year IT student, I believe understanding these principles is the difference between simply building a system and building one that is dependable and resilient. Security by Design stood out to me because protection should be integrated from the start, not added later.</p>
-            </div>
-
-            <div class="cube-wrap">
-                <div class="mcube-scene">
-                    <div class="mcube" aria-label="McCumber cube">
-                        <button class="mcube-face mcube-front is-active" data-key="confidentiality"><span>Confidentiality</span></button>
-                        <button class="mcube-face mcube-left" data-key="integrity"><span>Integrity</span></button>
-                        <button class="mcube-face mcube-top" data-key="availability"><span>Availability</span></button>
-                        <button class="mcube-face mcube-back" data-key="storage"><span>Storage</span></button>
-                        <button class="mcube-face mcube-right" data-key="processing"><span>Processing</span></button>
-                        <button class="mcube-face mcube-bottom" data-key="transmission"><span>Transmission</span></button>
-                    </div>
-                </div>
-
-                <div class="cube-info">
-                    <h4 id="cube-title">Confidentiality</h4>
-                    <p id="cube-text">Confidentiality means keeping information hidden from people who are not allowed to see it. This helps protect private data and prevents unauthorized access to sensitive information.</p>
-                </div>
+        <div class="container">
+            <div class="expertise-grid">
+                <div class="cute-box"><img src="logo/visualstudiocode.svg" alt=""><h4>VS Code</h4><p class="montserrat">Code Editor</p></div>
+                <div class="cute-box"><img src="logo/Figma.svg" alt=""><h4>Figma</h4><p class="montserrat">Interface Design</p></div>
+                <div class="cute-box"><img src="logo/Penpot.png" alt=""><h4>Penpot</h4><p class="montserrat">Open Source UI</p></div>
+                <div class="cute-box"><img src="logo/IbisPaint.svg" alt=""><h4>Ibis Paint</h4><p class="montserrat">Digital Art</p></div>
+                <div class="cute-box"><img src="logo/new-affinity-logo.svg" alt=""><h4>Affinity</h4><p class="montserrat">Vector Art</p></div>
+                <div class="cute-box"><img src="logo/Canva.svg" alt=""><h4>Canva</h4><p class="montserrat">Layouts</p></div>
+                <div class="cute-box"><img src="logo/react.svg" alt=""><h4>React</h4><p class="montserrat">Frontend</p></div>
+                <div class="cute-box"><img src="logo/tailwindcss.svg" alt=""><h4>Tailwind</h4><p class="montserrat">Styling</p></div>
+                <div class="cute-box"><img src="logo/vitejs.svg" alt=""><h4>Vite</h4><p class="montserrat">Build Tools</p></div>
+                <div class="cute-box"><img src="logo/github.svg" alt=""><h4>GitHub</h4><p class="montserrat">Version</p></div>
+                <div class="cute-box"><img src="logo/Framer.jpg" alt=""><h4>Framer</h4><p class="montserrat">Prototyping</p></div>
+                <div class="cute-box"><img src="logo/Blender.svg" alt=""><h4>Blender</h4><p class="montserrat">3D Modeling</p></div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================================ -->
+    <!-- // PORTFOLIO SECTION — UNIFIED INTERACTIVE CATEGORY EXPLORER -->
+    <!-- ============================================================ -->
+    <section id="portfolio" class="pf-section">
+
+        <div class="pf-header container">
+            <h3 class="section-label montserrat">MY WORK</h3>
+            <h2 class="pf-title">MY INSIGHT REFLECTION</h2>
+        </div>
+
+        <!-- CATEGORY TRIGGER CARDS -->
+        <div class="pf-trigger-row container">
+
+            <div class="pf-trigger-card" id="trigger-frontend" onclick="openPortfolioPanel('frontend')">
+                <div class="pf-trigger-bg" style="background-image: url('MCCUMBER.png');"></div>
+                <div class="pf-trigger-shade"></div>
+                <div class="pf-trigger-content">
+                    <span class="pf-trigger-index montserrat">01</span>
+                    <h2 class="pf-trigger-title">REFLECTION 1</h2>
+                    <p class="pf-trigger-sub montserrat">SECURITY PRINCIPLES</p>
+                    <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
+                </div>
+            </div>
+
+            <div class="pf-trigger-card" id="trigger-graphics" onclick="openPortfolioPanel('graphics')">
+                <div class="pf-trigger-bg" style="background-image: url('CodeLink.png');"></div>
+                <div class="pf-trigger-shade"></div>
+                <div class="pf-trigger-content">
+                    <span class="pf-trigger-index montserrat">02</span>
+                    <h2 class="pf-trigger-title">REFLECTION 2</h2>
+                    <p class="pf-trigger-sub montserrat">COMING SOON!</p>
+                    <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- EXPANDABLE PANEL (shared, swaps content) -->
+        <div class="pf-panel" id="pf-panel">
+
+            <!-- Panel Header -->
+            <div class="pf-panel-header container">
+                <div class="pf-panel-meta">
+                    <span class="pf-panel-label montserrat" id="pf-panel-label">REFLECTION</span>
+                    <p class="pf-panel-desc montserrat" id="pf-panel-desc">My personal insight on cybersecurity and why security must be built in from the start.</p>
+                </div>
+                <button class="pf-close-btn montserrat" onclick="closePortfolioPanel()">[ ESC_CLOSE_SECTION ]</button>
+            </div>
+
+            <div class="pf-grid-outer container">
+                <div class="pf-grid" id="pf-carousel-track">
+                    <!-- injected by JS -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ============================================================ -->
+    <!-- END PORTFOLIO SECTION                                        -->
+    <!-- ============================================================ -->
+
+    <!-- // FOOTER PART -->
     <footer>
-        <div class="container footer-inner">
-            <p>&copy; 2026 SHARIFF ISIRANI. All Rights Reserved.</p>
+        <div class="container">
+            <p class="copyright montserrat">&copy; 2026 SHARIFF ISIRANI. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
+        /* ─── LIGHTBOX ─── */
+        function openLightbox(src) {
+            const lbImg = document.getElementById('lightbox-img');
+            const lbBg  = document.getElementById('lightbox-bg');
+            const lb    = document.getElementById('lightbox');
+            if (lbImg && lbBg && lb) {
+                lbImg.src = src;
+                lbBg.src  = src;
+                lb.style.display = 'flex';
+            }
+        }
+
+        /* ─── MOBILE MENU ─── */
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        /* ════════════════════════════════════════════════════
+           PORTFOLIO SECTION — DATA & LOGIC
+        ════════════════════════════════════════════════════ */
+
+        const portfolioData = {
+            frontend: {
+                label: 'REFLECTION',
+                desc: 'My personal insight on cybersecurity and why security must be built in from the start.',
+                content: `
+                    <div class="reflection-layout">
+                        <div class="reflection-copy">
+                            <h3>REFLECTION</h3>
+                            <p>In the week that I learned about the McCumber Cube, CIA Triad, and the AAA framework, I realized that protecting information goes far beyond just setting a strong password. The CIA Triad helps us remember that information must remain confidential, maintain integrity, and remain available to authorized users. This means that security is not only about restricting access but also about making sure systems operate reliably and safely.</p>
+                            <p>The McCumber Cube expanded my understanding by showing that security must be viewed in terms of information states, security goals, and countermeasures. It reminded me that technology, people, and policies all work together in a secure environment. I also learned that the AAA framework is important because it focuses on authentication, authorization, and accounting. These steps help verify identity, control access, and monitor user activity to detect attacks.</p>
+                            <p>As a third-year IT student, I believe understanding these principles is the difference between simply building a system and building one that is dependable and resilient. The principle of Security by Design stood out to me the most because it tells us that protection should be included from the start, not added later. I also learned the importance of Least Privilege and Need-to-Know, which ensure users only receive the minimum access needed for their responsibilities.</p>
+                        </div>
+
+                        <div class="cube-wrap">
+                            <svg class="mcube-svg" viewBox="0 0 390 280" aria-label="McCumber cube" role="group">
+                                <polygon class="mcube-face" data-key="transmission" points="195,30 290.26,85 258.51,103.33 163.25,48.33"><title>Transmission</title></polygon>
+                                <polygon class="mcube-face" data-key="storage" points="163.25,48.33 258.51,103.33 226.75,121.67 131.49,66.67"><title>Storage</title></polygon>
+                                <polygon class="mcube-face" data-key="processing" points="131.49,66.67 226.75,121.67 195,140 99.74,85"><title>Processing</title></polygon>
+
+                                <polygon class="mcube-face" data-key="confidentiality" points="99.74,85 195,140 195,176.67 99.74,121.67"><title>Confidentiality</title></polygon>
+                                <polygon class="mcube-face" data-key="integrity" points="99.74,121.67 195,176.67 195,213.33 99.74,158.33"><title>Integrity</title></polygon>
+                                <polygon class="mcube-face" data-key="availability" points="99.74,158.33 195,213.33 195,250 99.74,195"><title>Availability</title></polygon>
+
+                                <polygon class="mcube-face" data-key="human-factors" points="290.26,85 195,140 195,176.67 290.26,121.67"><title>Human Factors</title></polygon>
+                                <polygon class="mcube-face" data-key="policy-practices" points="290.26,121.67 195,176.67 195,213.33 290.26,158.33"><title>Policy and Practices</title></polygon>
+                                <polygon class="mcube-face" data-key="technology" points="290.26,158.33 195,213.33 195,250 290.26,195"><title>Technology</title></polygon>
+
+                                <g class="mcube-label-group">
+                                    <text class="mcube-label" x="226.76" y="63" text-anchor="middle"><tspan x="226.76" dy="0">TRANSMIS</tspan><tspan x="226.76" dy="8">SION</tspan></text>
+                                    <text class="mcube-label" x="195" y="82" text-anchor="middle"><tspan x="195" dy="0">STORAGE</tspan></text>
+                                    <text class="mcube-label" x="163.25" y="100" text-anchor="middle"><tspan x="163.25" dy="0">PROCESS</tspan><tspan x="163.25" dy="8">ING</tspan></text>
+
+                                    <text class="mcube-label" x="147.37" y="127" text-anchor="middle"><tspan x="147.37" dy="0">CONFIDEN</tspan><tspan x="147.37" dy="8">TIALITY</tspan></text>
+                                    <text class="mcube-label" x="147.37" y="164" text-anchor="middle"><tspan x="147.37" dy="0">INTEGRITY</tspan></text>
+                                    <text class="mcube-label" x="147.37" y="201" text-anchor="middle"><tspan x="147.37" dy="0">AVAILA</tspan><tspan x="147.37" dy="8">BILITY</tspan></text>
+
+                                    <text class="mcube-label mcube-label--light" x="242.63" y="127" text-anchor="middle"><tspan x="242.63" dy="0">HUMAN</tspan><tspan x="242.63" dy="8">FACTORS</tspan></text>
+                                    <text class="mcube-label mcube-label--light" x="242.63" y="164" text-anchor="middle"><tspan x="242.63" dy="0">POLICY AND</tspan><tspan x="242.63" dy="8">PRACTICES</tspan></text>
+                                    <text class="mcube-label mcube-label--light" x="242.63" y="201" text-anchor="middle"><tspan x="242.63" dy="0">TECHNOL</tspan><tspan x="242.63" dy="8">OGY</tspan></text>
+                                </g>
+                            </svg>
+
+                            <div class="cube-info">
+                                <h4 id="cube-title">Confidentiality</h4>
+                                <p id="cube-text">Protecting information so it is not disclosed to unauthorized people or systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            graphics: {
+                label: 'REFLECTION',
+                desc: 'Coming soon.',
+                content: `
+                    <div class="reflection-layout reflection-layout--soon">
+                        <div class="reflection-copy">
+                            <h3>REFLECTION</h3>
+                            <p>This reflection is still being prepared. I will share my thoughts on design thinking, user-centered problem solving, and how security can shape more thoughtful digital experiences.</p>
+                        </div>
+
+                        <div class="cube-wrap">
+                            <svg class="mcube-svg mcube-svg--soon" viewBox="0 0 390 280" aria-label="Coming soon cube" role="group">
+                                <polygon class="mcube-face" data-key="coming-soon" points="195,30 290.26,85 258.51,103.33 163.25,48.33"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="163.25,48.33 258.51,103.33 226.75,121.67 131.49,66.67"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="131.49,66.67 226.75,121.67 195,140 99.74,85"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,85 195,140 195,176.67 99.74,121.67"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,121.67 195,176.67 195,213.33 99.74,158.33"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,158.33 195,213.33 195,250 99.74,195"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,85 195,140 195,176.67 290.26,121.67"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,121.67 195,176.67 195,213.33 290.26,158.33"></polygon>
+                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,158.33 195,213.33 195,250 290.26,195"></polygon>
+                                <text class="mcube-label" x="195" y="145" text-anchor="middle">SOON</text>
+                            </svg>
+                            <div class="cube-info">
+                                <h4 id="cube-title">Coming Soon</h4>
+                                <p id="cube-text">This reflection is being prepared and will be added soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
         const cubeDetails = {
             confidentiality: {
                 title: 'Confidentiality',
-                text: 'Confidentiality means keeping information hidden from people who are not allowed to see it. This helps protect private data and prevents unauthorized access to sensitive information.'
+                text: 'Information is accessible only to authorized individuals, systems, or processes.'
             },
             integrity: {
                 title: 'Integrity',
-                text: 'Integrity ensures information stays accurate, complete, and trustworthy. It reminds us that data should not be altered or damaged by unauthorized changes.'
+                text: 'Information stays accurate, complete, and unaltered except by authorized users.'
             },
             availability: {
                 title: 'Availability',
-                text: 'Availability means authorized users can access systems and data whenever they need them. A secure system must stay dependable and usable during normal operations.'
+                text: 'Information and services are accessible whenever authorized users need them.'
             },
             storage: {
                 title: 'Storage',
@@ -132,40 +312,107 @@
             transmission: {
                 title: 'Transmission',
                 text: 'Transmission protects information while it moves across networks and communication channels. This is important because data is vulnerable during transfer between devices and systems.'
+            },
+            technology: {
+                title: 'Technology',
+                text: 'The technical safeguards, like firewalls, encryption, and antivirus tools, that enforce security at the system level.'
+            },
+            'policy-practices': {
+                title: 'Policy and Practices',
+                text: 'The rules and procedures organizations set to govern how information should be handled and protected.'
+            },
+            'human-factors': {
+                title: 'Human Factors',
+                text: 'The people side of security, including training, awareness, and behavior, since users can either strengthen or weaken every other safeguard.'
+            },
+            'coming-soon': {
+                title: 'Coming Soon',
+                text: 'This reflection is still being prepared and will be added as soon as it is ready.'
             }
         };
 
-        const cube = document.querySelector('.mcube');
-        const faces = document.querySelectorAll('.mcube-face');
-        const cubeTitle = document.getElementById('cube-title');
-        const cubeText = document.getElementById('cube-text');
+        let activeCategory = null;
 
-        if (cube) {
-            cube.addEventListener('pointermove', (event) => {
-                const rect = cube.getBoundingClientRect();
-                const px = (event.clientX - rect.left) / rect.width;
-                const py = (event.clientY - rect.top) / rect.height;
-                const rx = -18 + (0.5 - py) * 16;
-                const ry = 30 + (px - 0.5) * 24;
-                cube.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-            });
+        function openPortfolioPanel(category) {
+            const data = portfolioData[category];
+            const panel = document.getElementById('pf-panel');
 
-            cube.addEventListener('pointerleave', () => {
-                cube.style.transform = 'rotateX(-18deg) rotateY(30deg)';
-            });
+            if (activeCategory === category && panel.classList.contains('pf-panel--open')) {
+                closePortfolioPanel();
+                return;
+            }
+
+            activeCategory = category;
+
+            document.querySelectorAll('.pf-trigger-card').forEach(c => c.classList.remove('pf-trigger-card--active'));
+            document.getElementById('trigger-' + category).classList.add('pf-trigger-card--active');
+
+            document.getElementById('pf-panel-label').textContent = data.label;
+            document.getElementById('pf-panel-desc').textContent = data.desc;
+            document.getElementById('pf-carousel-track').innerHTML = data.content;
+
+            panel.classList.add('pf-panel--open');
+
+            setTimeout(() => {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                bindCubeInteraction();
+            }, 80);
         }
 
-        faces.forEach((face) => {
-            face.addEventListener('click', () => {
-                const key = face.dataset.key;
-                const info = cubeDetails[key] || cubeDetails.confidentiality;
+        function bindCubeInteraction() {
+            const faces = document.querySelectorAll('.mcube-face');
+            const cubeTitle = document.getElementById('cube-title');
+            const cubeText = document.getElementById('cube-text');
 
-                faces.forEach(item => item.classList.remove('is-active'));
-                face.classList.add('is-active');
-                cubeTitle.textContent = info.title;
-                cubeText.textContent = info.text;
+            if (!faces.length || !cubeTitle || !cubeText) return;
+
+            faces.forEach(face => {
+                face.addEventListener('click', () => {
+                    const key = face.dataset.key;
+                    const info = cubeDetails[key] || cubeDetails['confidentiality'];
+
+                    faces.forEach(item => item.classList.remove('is-active'));
+                    face.classList.add('is-active');
+                    cubeTitle.textContent = info.title;
+                    cubeText.textContent = info.text;
+                });
             });
+
+            const defaultFace = document.querySelector('.mcube-face.is-active') || document.querySelector('.mcube-face');
+            if (defaultFace) {
+                defaultFace.click();
+            }
+        }
+
+        function closePortfolioPanel() {
+            const panel = document.getElementById('pf-panel');
+            panel.classList.remove('pf-panel--open');
+            document.querySelectorAll('.pf-trigger-card').forEach(c => c.classList.remove('pf-trigger-card--active'));
+            activeCategory = null;
+        }
+
+        /* ESC key to close panel */
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closePortfolioPanel();
         });
+
+        /* ─── MUSIC TOGGLE ─── */
+        const music = document.getElementById('bg-music');
+        const btn   = document.getElementById('music-btn');
+        let playing = false;
+
+        function toggleMusic() {
+        if (playing) {
+        music.pause();
+        btn.textContent = '♪';
+        btn.classList.remove('music-on');
+        } else {
+        music.play();
+        btn.textContent = '♫';
+        btn.classList.add('music-on');
+        }
+        playing = !playing;
+}
     </script>
 </body>
 </html>
