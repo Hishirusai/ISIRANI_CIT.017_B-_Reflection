@@ -143,7 +143,7 @@
                 <div class="pf-trigger-content">
                     <span class="pf-trigger-index montserrat">02</span>
                     <h2 class="pf-trigger-title">REFLECTION 2</h2>
-                    <p class="pf-trigger-sub montserrat">COMING SOON!</p>
+                    <p class="pf-trigger-sub montserrat">SOCIAL ENGINEERING</p>
                     <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
                 </div>
             </div>
@@ -257,30 +257,95 @@
             },
             graphics: {
                 label: 'REFLECTION',
-                desc: 'Coming soon.',
+                desc: 'My personal insight on social engineering and why human psychology is often the weakest link.',
                 content: `
-                    <div class="reflection-layout reflection-layout--soon">
+                    <div class="reflection-layout">
                         <div class="reflection-copy">
-                            <h3>REFLECTION</h3>
-                            <p>This reflection is still being prepared. I will share my thoughts on design thinking, user-centered problem solving, and how security can shape more thoughtful digital experiences.</p>
+                            <h3>REFLECTION 2</h3>
+                            <p>I guess the sentence "don't trust a stranger" is now on another level. From the presentation that Ma'am Maureen gave and the video lectures on security threats that I learned, I think something shifted in my perspective on how vulnerabilities are exploited, revealing that human psychology is often the weakest link in any system, and we must learn how to protect ourselves from it.</p>
+                            <p>One of my most striking new insights was realizing the sheer speed and ease with which attackers can compromise an account or network without writing a single line of malicious code. It is both amazing and concerning seeing how efficient they are in communication and analyzing human nature. Seeing a hacker use a spoofed phone number, a fake crying baby, and a fabricated story about a loan to completely lock someone out of their personal account in just minutes was alarming. Watching a social engineer trick an IT helpdesk employee into clicking a malicious link simply by acting like a confused colleague also shows how attackers weaponize our natural instinct to be helpful.</p>
+                            <p>While the breakdown of social engineering types like phishing, baiting, and scareware, along with other types of threats, provided a solid foundation, there are concepts I would like to read more on — specifically the technical side of how hackers successfully spoof internal company phone numbers, and how they execute the final phase of their attack lifecycle by completely removing their digital traces, just like leaving without a trace in those movies.</p>
+                            <p>However, a lingering confusion and challenge for me is understanding how trained technical support staff can still fall for these pretexting traps despite working in the field and having awareness of cyber threats. I think our desire to help often outweighs our logical mind. It completely challenged the assumption that technical knowledge alone guarantees security, reinforcing the difficult reality that as long as human interaction is involved, systems will remain inherently vulnerable to manipulation.</p>
                         </div>
 
-                        <div class="cube-wrap">
-                            <svg class="mcube-svg mcube-svg--soon" viewBox="0 0 390 280" aria-label="Coming soon cube" role="group">
-                                <polygon class="mcube-face" data-key="coming-soon" points="195,30 290.26,85 258.51,103.33 163.25,48.33"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="163.25,48.33 258.51,103.33 226.75,121.67 131.49,66.67"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="131.49,66.67 226.75,121.67 195,140 99.74,85"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,85 195,140 195,176.67 99.74,121.67"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,121.67 195,176.67 195,213.33 99.74,158.33"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="99.74,158.33 195,213.33 195,250 99.74,195"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,85 195,140 195,176.67 290.26,121.67"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,121.67 195,176.67 195,213.33 290.26,158.33"></polygon>
-                                <polygon class="mcube-face" data-key="coming-soon" points="290.26,158.33 195,213.33 195,250 290.26,195"></polygon>
-                                <text class="mcube-label" x="195" y="145" text-anchor="middle">SOON</text>
-                            </svg>
-                            <div class="cube-info">
-                                <h4 id="cube-title">Coming Soon</h4>
-                                <p id="cube-text">This reflection is being prepared and will be added soon.</p>
+                        <div class="threat-cards-wrap">
+                            <div class="threat-cards" id="threat-cards">
+                                <div class="threat-card" data-key="phishing" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">01</span>
+                                        <span class="threat-card-title">Phishing</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Fraudulent messages, usually email, crafted to trick someone into revealing sensitive information or clicking a malicious link.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="vishing" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">02</span>
+                                        <span class="threat-card-title">Vishing</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Voice-based social engineering — a spoofed phone number, a fake crying baby, and a fabricated loan story used to pressure someone into losing account access in minutes.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="pretexting" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">03</span>
+                                        <span class="threat-card-title">Pretexting</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Inventing a believable scenario to manipulate a target — like acting as a confused colleague to an IT helpdesk employee — into taking an unsafe action.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="baiting" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">04</span>
+                                        <span class="threat-card-title">Baiting</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Dangling something tempting — a link, a download, or a device — to lure a victim into compromising their own system.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="scareware" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">05</span>
+                                        <span class="threat-card-title">Scareware</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Fake warnings or alerts meant to frighten a user into installing malware or paying for bogus protection.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="impersonation" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">06</span>
+                                        <span class="threat-card-title">Impersonation</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>Posing as a trusted role, like IT staff or a coworker, to exploit a person's natural instinct to be helpful.</p>
+                                    </div>
+                                </div>
+
+                                <div class="threat-card" data-key="anti-forensics" onclick="toggleThreatCard(this)">
+                                    <div class="threat-card-head">
+                                        <span class="threat-card-index montserrat">07</span>
+                                        <span class="threat-card-title">Covering Tracks</span>
+                                        <span class="threat-card-toggle">+</span>
+                                    </div>
+                                    <div class="threat-card-body">
+                                        <p>The final phase of the attack lifecycle, where the attacker removes their digital traces — leaving without a trace, like in the movies.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -357,6 +422,15 @@
                 panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 bindCubeInteraction();
             }, 80);
+        }
+
+        function toggleThreatCard(card) {
+            const wasOpen = card.classList.contains('is-open');
+            const group = card.closest('.threat-cards');
+            if (group) {
+                group.querySelectorAll('.threat-card').forEach(c => c.classList.remove('is-open'));
+            }
+            if (!wasOpen) card.classList.add('is-open');
         }
 
         function bindCubeInteraction() {

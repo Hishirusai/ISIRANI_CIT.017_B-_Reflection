@@ -493,6 +493,95 @@ nav {
     width: 100%;
 }
 
+.threat-cards-wrap {
+    width: 100%;
+    max-height: 620px;
+    overflow-y: auto;
+    padding-right: 0.6rem;
+}
+
+.threat-cards-wrap::-webkit-scrollbar { width: 6px; }
+.threat-cards-wrap::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+.threat-cards-wrap::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); }
+
+.threat-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.threat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.14);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.threat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 26px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.threat-card.is-open {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+}
+
+.threat-card-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.3rem;
+}
+
+.threat-card-index {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+}
+
+.threat-card-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    color: #fff;
+    flex: 1;
+}
+
+.threat-card-toggle {
+    font-size: 1.3rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.6);
+    transition: transform 0.2s ease;
+}
+
+.threat-card.is-open .threat-card-toggle {
+    transform: rotate(45deg);
+}
+
+.threat-card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.3rem;
+}
+
+.threat-card.is-open .threat-card-body {
+    max-height: 220px;
+    padding: 0 1.3rem 1.2rem;
+}
+
+.threat-card-body p {
+    font-family: var(--font-body);
+    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .mcube-svg {
     width: 100%;
     max-width: 640px;
