@@ -114,13 +114,14 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- // PORTFOLIO SECTION — UNIFIED INTERACTIVE CATEGORY EXPLORER -->
+    <!-- // PORTFOLIO SECTION, UNIFIED INTERACTIVE CATEGORY EXPLORER -->
     <!-- ============================================================ -->
     <section id="portfolio" class="pf-section">
 
         <div class="pf-header container">
             <h3 class="section-label montserrat">MY WORK</h3>
             <h2 class="pf-title">MY INSIGHT REFLECTION</h2>
+            <p class="pf-subtitle montserrat">CIT.017 &middot; INFORMATION ASSURANCE AND SECURITY &middot; REFLECTION JOURNAL</p>
         </div>
 
         <!-- CATEGORY TRIGGER CARDS -->
@@ -130,6 +131,7 @@
                 <div class="pf-trigger-bg" style="background-image: url('MCCUMBER.png');"></div>
                 <div class="pf-trigger-shade"></div>
                 <div class="pf-trigger-content">
+                    <span class="pf-trigger-term montserrat">FIRST HALF</span>
                     <span class="pf-trigger-index montserrat">01</span>
                     <h2 class="pf-trigger-title">REFLECTION 1</h2>
                     <p class="pf-trigger-sub montserrat">SECURITY PRINCIPLES</p>
@@ -141,9 +143,34 @@
                 <div class="pf-trigger-bg" style="background-image: url('CodeLink.png');"></div>
                 <div class="pf-trigger-shade"></div>
                 <div class="pf-trigger-content">
+                    <span class="pf-trigger-term montserrat">FIRST HALF</span>
                     <span class="pf-trigger-index montserrat">02</span>
                     <h2 class="pf-trigger-title">REFLECTION 2</h2>
                     <p class="pf-trigger-sub montserrat">SOCIAL ENGINEERING</p>
+                    <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
+                </div>
+            </div>
+
+            <div class="pf-trigger-card" id="trigger-risk" onclick="openPortfolioPanel('risk')">
+                <div class="pf-trigger-bg" style="background-image: url('image.png');"></div>
+                <div class="pf-trigger-shade"></div>
+                <div class="pf-trigger-content">
+                    <span class="pf-trigger-term montserrat">SECOND HALF</span>
+                    <span class="pf-trigger-index montserrat">03</span>
+                    <h2 class="pf-trigger-title">REFLECTION 3</h2>
+                    <p class="pf-trigger-sub montserrat">RISK ASSESSMENT</p>
+                    <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
+                </div>
+            </div>
+
+            <div class="pf-trigger-card" id="trigger-audit" onclick="openPortfolioPanel('audit')">
+                <div class="pf-trigger-bg" style="background-image: url('newhero.png');"></div>
+                <div class="pf-trigger-shade"></div>
+                <div class="pf-trigger-content">
+                    <span class="pf-trigger-term montserrat">SECOND HALF</span>
+                    <span class="pf-trigger-index montserrat">04</span>
+                    <h2 class="pf-trigger-title">REFLECTION 4</h2>
+                    <p class="pf-trigger-sub montserrat">INFORMATION SECURITY AUDIT</p>
                     <span class="pf-trigger-cta montserrat">READ REFLECTION ↓</span>
                 </div>
             </div>
@@ -202,150 +229,459 @@
         }
 
         /* ════════════════════════════════════════════════════
-           PORTFOLIO SECTION — DATA & LOGIC
+           PORTFOLIO SECTION, DATA & LOGIC
         ════════════════════════════════════════════════════ */
 
         const portfolioData = {
             frontend: {
-                label: 'REFLECTION',
-                desc: 'My personal insight on cybersecurity and why security must be built in from the start.',
+                label: 'REFLECTION 01: SECURITY PRINCIPLES',
+                desc: 'The McCumber Cube, CIA Triad, and AAA framework, and why security has to be built in from the start.',
                 content: `
-                    <div class="reflection-layout">
-                        <div class="reflection-copy">
-                            <h3>REFLECTION</h3>
+                    <div class="reflection-stack">
+                        <div class="reflection-copy reflection-copy--wide">
+                            <h3>REFLECTION 01</h3>
                             <p>In the week that I learned about the McCumber Cube, CIA Triad, and the AAA framework, I realized that protecting information goes far beyond just setting a strong password. The CIA Triad helps us remember that information must remain confidential, maintain integrity, and remain available to authorized users. This means that security is not only about restricting access but also about making sure systems operate reliably and safely.</p>
                             <p>The McCumber Cube expanded my understanding by showing that security must be viewed in terms of information states, security goals, and countermeasures. It reminded me that technology, people, and policies all work together in a secure environment. I also learned that the AAA framework is important because it focuses on authentication, authorization, and accounting. These steps help verify identity, control access, and monitor user activity to detect attacks.</p>
                             <p>As a third-year IT student, I believe understanding these principles is the difference between simply building a system and building one that is dependable and resilient. The principle of Security by Design stood out to me the most because it tells us that protection should be included from the start, not added later. I also learned the importance of Least Privilege and Need-to-Know, which ensure users only receive the minimum access needed for their responsibilities.</p>
+                            <div class="reflection-tags">
+                                <span class="reflection-tag montserrat">McCUMBER CUBE</span>
+                                <span class="reflection-tag montserrat">CIA TRIAD</span>
+                                <span class="reflection-tag montserrat">AAA FRAMEWORK</span>
+                                <span class="reflection-tag montserrat">SECURITY BY DESIGN</span>
+                            </div>
                         </div>
 
-                        <div class="cube-wrap">
-                            <svg class="mcube-svg" viewBox="0 0 390 280" aria-label="McCumber cube" role="group">
-                                <polygon class="mcube-face" data-key="transmission" points="195,30 290.26,85 258.51,103.33 163.25,48.33"><title>Transmission</title></polygon>
-                                <polygon class="mcube-face" data-key="storage" points="163.25,48.33 258.51,103.33 226.75,121.67 131.49,66.67"><title>Storage</title></polygon>
-                                <polygon class="mcube-face" data-key="processing" points="131.49,66.67 226.75,121.67 195,140 99.74,85"><title>Processing</title></polygon>
-
-                                <polygon class="mcube-face" data-key="confidentiality" points="99.74,85 195,140 195,176.67 99.74,121.67"><title>Confidentiality</title></polygon>
-                                <polygon class="mcube-face" data-key="integrity" points="99.74,121.67 195,176.67 195,213.33 99.74,158.33"><title>Integrity</title></polygon>
-                                <polygon class="mcube-face" data-key="availability" points="99.74,158.33 195,213.33 195,250 99.74,195"><title>Availability</title></polygon>
-
-                                <polygon class="mcube-face" data-key="human-factors" points="290.26,85 195,140 195,176.67 290.26,121.67"><title>Human Factors</title></polygon>
-                                <polygon class="mcube-face" data-key="policy-practices" points="290.26,121.67 195,176.67 195,213.33 290.26,158.33"><title>Policy and Practices</title></polygon>
-                                <polygon class="mcube-face" data-key="technology" points="290.26,158.33 195,213.33 195,250 290.26,195"><title>Technology</title></polygon>
-
-                                <g class="mcube-label-group">
-                                    <text class="mcube-label" x="226.76" y="63" text-anchor="middle"><tspan x="226.76" dy="0">TRANSMIS</tspan><tspan x="226.76" dy="8">SION</tspan></text>
-                                    <text class="mcube-label" x="195" y="82" text-anchor="middle"><tspan x="195" dy="0">STORAGE</tspan></text>
-                                    <text class="mcube-label" x="163.25" y="100" text-anchor="middle"><tspan x="163.25" dy="0">PROCESS</tspan><tspan x="163.25" dy="8">ING</tspan></text>
-
-                                    <text class="mcube-label" x="147.37" y="127" text-anchor="middle"><tspan x="147.37" dy="0">CONFIDEN</tspan><tspan x="147.37" dy="8">TIALITY</tspan></text>
-                                    <text class="mcube-label" x="147.37" y="164" text-anchor="middle"><tspan x="147.37" dy="0">INTEGRITY</tspan></text>
-                                    <text class="mcube-label" x="147.37" y="201" text-anchor="middle"><tspan x="147.37" dy="0">AVAILA</tspan><tspan x="147.37" dy="8">BILITY</tspan></text>
-
-                                    <text class="mcube-label mcube-label--light" x="242.63" y="127" text-anchor="middle"><tspan x="242.63" dy="0">HUMAN</tspan><tspan x="242.63" dy="8">FACTORS</tspan></text>
-                                    <text class="mcube-label mcube-label--light" x="242.63" y="164" text-anchor="middle"><tspan x="242.63" dy="0">POLICY AND</tspan><tspan x="242.63" dy="8">PRACTICES</tspan></text>
-                                    <text class="mcube-label mcube-label--light" x="242.63" y="201" text-anchor="middle"><tspan x="242.63" dy="0">TECHNOL</tspan><tspan x="242.63" dy="8">OGY</tspan></text>
-                                </g>
-                            </svg>
-
-                            <div class="cube-info">
-                                <h4 id="cube-title">Confidentiality</h4>
-                                <p id="cube-text">Protecting information so it is not disclosed to unauthorized people or systems.</p>
+                        <div class="cube-section">
+                            <div class="cube-section-head">
+                                <span class="section-eyebrow montserrat">THE MODEL BEHIND THE LESSON</span>
+                                <h3>THE McCUMBER CUBE</h3>
+                                <p>The McCumber Cube is a three-dimensional model for thinking about information security. Instead of looking at security from just one angle, it asks three questions at the same time: <strong>where is the information</strong>, <strong>what are we trying to protect</strong>, and <strong>how are we protecting it</strong>. Every small block in the cube represents one possible combination of those answers.</p>
+                                <p>The cube has 3 × 3 × 3 = <strong>27 cells</strong>. That sounds like a lot, but it is really just a checklist that helps us notice the gaps we usually forget, like protecting data while it is being transmitted, not only while it is stored.</p>
                             </div>
+
+                            <div class="cube-wrap">
+                                <svg class="mcube-svg" viewBox="0 0 390 280" aria-label="Interactive McCumber Cube, click a face to learn more" role="group">
+                                    <polygon class="mcube-face" data-key="transmission" points="195,30 290.26,85 258.51,103.33 163.25,48.33"><title>Transmission</title></polygon>
+                                    <polygon class="mcube-face" data-key="storage" points="163.25,48.33 258.51,103.33 226.75,121.67 131.49,66.67"><title>Storage</title></polygon>
+                                    <polygon class="mcube-face" data-key="processing" points="131.49,66.67 226.75,121.67 195,140 99.74,85"><title>Processing</title></polygon>
+
+                                    <polygon class="mcube-face" data-key="confidentiality" points="99.74,85 195,140 195,176.67 99.74,121.67"><title>Confidentiality</title></polygon>
+                                    <polygon class="mcube-face" data-key="integrity" points="99.74,121.67 195,176.67 195,213.33 99.74,158.33"><title>Integrity</title></polygon>
+                                    <polygon class="mcube-face" data-key="availability" points="99.74,158.33 195,213.33 195,250 99.74,195"><title>Availability</title></polygon>
+
+                                    <polygon class="mcube-face" data-key="human-factors" points="290.26,85 195,140 195,176.67 290.26,121.67"><title>Human Factors</title></polygon>
+                                    <polygon class="mcube-face" data-key="policy-practices" points="290.26,121.67 195,176.67 195,213.33 290.26,158.33"><title>Policy and Practices</title></polygon>
+                                    <polygon class="mcube-face" data-key="technology" points="290.26,158.33 195,213.33 195,250 290.26,195"><title>Technology</title></polygon>
+
+                                    <g class="mcube-label-group">
+                                        <text class="mcube-label" x="226.76" y="63" text-anchor="middle"><tspan x="226.76" dy="0">TRANSMIS</tspan><tspan x="226.76" dy="8">SION</tspan></text>
+                                        <text class="mcube-label" x="195" y="82" text-anchor="middle"><tspan x="195" dy="0">STORAGE</tspan></text>
+                                        <text class="mcube-label" x="163.25" y="100" text-anchor="middle"><tspan x="163.25" dy="0">PROCESS</tspan><tspan x="163.25" dy="8">ING</tspan></text>
+
+                                        <text class="mcube-label" x="147.37" y="127" text-anchor="middle"><tspan x="147.37" dy="0">CONFIDEN</tspan><tspan x="147.37" dy="8">TIALITY</tspan></text>
+                                        <text class="mcube-label" x="147.37" y="164" text-anchor="middle"><tspan x="147.37" dy="0">INTEGRITY</tspan></text>
+                                        <text class="mcube-label" x="147.37" y="201" text-anchor="middle"><tspan x="147.37" dy="0">AVAILA</tspan><tspan x="147.37" dy="8">BILITY</tspan></text>
+
+                                        <text class="mcube-label mcube-label--light" x="242.63" y="127" text-anchor="middle"><tspan x="242.63" dy="0">HUMAN</tspan><tspan x="242.63" dy="8">FACTORS</tspan></text>
+                                        <text class="mcube-label mcube-label--light" x="242.63" y="164" text-anchor="middle"><tspan x="242.63" dy="0">POLICY AND</tspan><tspan x="242.63" dy="8">PRACTICES</tspan></text>
+                                        <text class="mcube-label mcube-label--light" x="242.63" y="201" text-anchor="middle"><tspan x="242.63" dy="0">TECHNOL</tspan><tspan x="242.63" dy="8">OGY</tspan></text>
+                                    </g>
+                                </svg>
+
+                                <div class="cube-info">
+                                    <span class="cube-info-label montserrat">SELECTED FACE</span>
+                                    <h4 id="cube-title">Confidentiality</h4>
+                                    <p id="cube-text">Protecting information so it is not disclosed to unauthorized people or systems.</p>
+                                </div>
+                            </div>
+
+                            <div class="cube-legend">
+                                <div class="cube-legend-card">
+                                    <span class="cube-legend-num montserrat">AXIS 01</span>
+                                    <h4>Information States</h4>
+                                    <p>Where the data is at any moment: <strong>storage</strong>, <strong>processing</strong>, or <strong>transmission</strong>. Each state needs its own kind of protection.</p>
+                                </div>
+                                <div class="cube-legend-card">
+                                    <span class="cube-legend-num montserrat">AXIS 02</span>
+                                    <h4>Security Goals</h4>
+                                    <p>What we are protecting: <strong>confidentiality</strong>, <strong>integrity</strong>, and <strong>availability</strong>. This is the CIA Triad in action.</p>
+                                </div>
+                                <div class="cube-legend-card">
+                                    <span class="cube-legend-num montserrat">AXIS 03</span>
+                                    <h4>Countermeasures</h4>
+                                    <p>How we protect it: <strong>technology</strong>, <strong>policy and practices</strong>, and <strong>human factors</strong>. All three must work together.</p>
+                                </div>
+                            </div>
+
+                            <p class="cube-hint montserrat">↖ CLICK OR HOVER ANY FACE OF THE CUBE TO EXPLORE IT</p>
                         </div>
                     </div>
                 `
             },
             graphics: {
-                label: 'REFLECTION',
-                desc: 'My personal insight on social engineering and why human psychology is often the weakest link.',
+                label: 'REFLECTION 02: SOCIAL ENGINEERING',
+                desc: 'Why human psychology is often the weakest link, and the many shapes social engineering can take.',
                 content: `
-                    <div class="reflection-layout">
-                        <div class="reflection-copy">
-                            <h3>REFLECTION 2</h3>
+                    <div class="reflection-stack">
+                        <div class="reflection-copy reflection-copy--wide">
+                            <h3>REFLECTION 02</h3>
                             <p>I guess the sentence "don't trust a stranger" is now on another level. From the presentation that Ma'am Maureen gave and the video lectures on security threats that I learned, I think something shifted in my perspective on how vulnerabilities are exploited, revealing that human psychology is often the weakest link in any system, and we must learn how to protect ourselves from it.</p>
                             <p>One of my most striking new insights was realizing the sheer speed and ease with which attackers can compromise an account or network without writing a single line of malicious code. It is both amazing and concerning seeing how efficient they are in communication and analyzing human nature. Seeing a hacker use a spoofed phone number, a fake crying baby, and a fabricated story about a loan to completely lock someone out of their personal account in just minutes was alarming. Watching a social engineer trick an IT helpdesk employee into clicking a malicious link simply by acting like a confused colleague also shows how attackers weaponize our natural instinct to be helpful.</p>
-                            <p>While the breakdown of social engineering types like phishing, baiting, and scareware, along with other types of threats, provided a solid foundation, there are concepts I would like to read more on — specifically the technical side of how hackers successfully spoof internal company phone numbers, and how they execute the final phase of their attack lifecycle by completely removing their digital traces, just like leaving without a trace in those movies.</p>
+                            <p>While the breakdown of social engineering types like phishing, baiting, and scareware, along with other types of threats, provided a solid foundation, there are concepts I would like to read more on, specifically the technical side of how hackers successfully spoof internal company phone numbers, and how they execute the final phase of their attack lifecycle by completely removing their digital traces, just like leaving without a trace in those movies.</p>
                             <p>However, a lingering confusion and challenge for me is understanding how trained technical support staff can still fall for these pretexting traps despite working in the field and having awareness of cyber threats. I think our desire to help often outweighs our logical mind. It completely challenged the assumption that technical knowledge alone guarantees security, reinforcing the difficult reality that as long as human interaction is involved, systems will remain inherently vulnerable to manipulation.</p>
+                            <div class="reflection-tags">
+                                <span class="reflection-tag montserrat">PHISHING</span>
+                                <span class="reflection-tag montserrat">VISHING</span>
+                                <span class="reflection-tag montserrat">PRETEXTING</span>
+                                <span class="reflection-tag montserrat">HUMAN FACTOR</span>
+                            </div>
                         </div>
 
-                        <div class="threat-cards-wrap">
-                            <div class="threat-cards" id="threat-cards">
-                                <div class="threat-card" data-key="phishing" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">01</span>
-                                        <span class="threat-card-title">Phishing</span>
-                                        <span class="threat-card-toggle">+</span>
-                                    </div>
-                                    <div class="threat-card-body">
-                                        <p>Fraudulent messages, usually email, crafted to trick someone into revealing sensitive information or clicking a malicious link.</p>
-                                    </div>
-                                </div>
+                        <div class="threat-section">
+                            <div class="threat-section-head">
+                                <span class="section-eyebrow montserrat">THE THREAT LANDSCAPE</span>
+                                <h3>KNOW THE TRICKS</h3>
+                                <p>Social engineering comes in many forms, but they all exploit the same things: our trust, curiosity, fear, or desire to help. Tap any card to open the details: how it works, the red flags to watch for, and how to defend against it.</p>
+                            </div>
 
-                                <div class="threat-card" data-key="vishing" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">02</span>
-                                        <span class="threat-card-title">Vishing</span>
-                                        <span class="threat-card-toggle">+</span>
-                                    </div>
-                                    <div class="threat-card-body">
-                                        <p>Voice-based social engineering — a spoofed phone number, a fake crying baby, and a fabricated loan story used to pressure someone into losing account access in minutes.</p>
-                                    </div>
-                                </div>
+                            <div class="threat-cards-wrap threat-cards-wrap--full">
+                                <div class="threat-cards" id="threat-cards">
 
-                                <div class="threat-card" data-key="pretexting" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">03</span>
-                                        <span class="threat-card-title">Pretexting</span>
-                                        <span class="threat-card-toggle">+</span>
+                                    <div class="threat-card" data-key="phishing" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">01</span>
+                                            <span class="threat-card-title">Phishing</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Fraudulent messages, usually email, crafted to trick someone into revealing sensitive information or clicking a malicious link.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>A message copies a real brand, coworker, or service and pushes the target to act fast, open an attachment, log in through a fake page, or send a file.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Generic greetings, urgent threats, a sender domain that almost matches the real one, or a link that points somewhere unexpected.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Verify the sender through another channel, preview links before clicking, and report suspicious mail instead of replying to it.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="threat-card-body">
-                                        <p>Inventing a believable scenario to manipulate a target — like acting as a confused colleague to an IT helpdesk employee — into taking an unsafe action.</p>
-                                    </div>
-                                </div>
 
-                                <div class="threat-card" data-key="baiting" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">04</span>
-                                        <span class="threat-card-title">Baiting</span>
-                                        <span class="threat-card-toggle">+</span>
+                                    <div class="threat-card" data-key="vishing" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">02</span>
+                                            <span class="threat-card-title">Vishing</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Voice-based social engineering that uses a spoofed phone number, a fake crying baby, and a fabricated loan story to pressure someone into losing account access in minutes.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>The attacker calls with a believable emergency or offer, then keeps the target emotional and rushed long enough to hand over a one-time password or account details.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Panic, secrecy, and pressure. The caller asks for an OTP, a password, or remote access, and refuses to let you call back on an official number.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Hang up and call the organization's official number yourself. Never read out an OTP, and never let a caller rush you.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="threat-card-body">
-                                        <p>Dangling something tempting — a link, a download, or a device — to lure a victim into compromising their own system.</p>
-                                    </div>
-                                </div>
 
-                                <div class="threat-card" data-key="scareware" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">05</span>
-                                        <span class="threat-card-title">Scareware</span>
-                                        <span class="threat-card-toggle">+</span>
+                                    <div class="threat-card" data-key="pretexting" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">03</span>
+                                            <span class="threat-card-title">Pretexting</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Inventing a believable scenario, like acting as a confused colleague to an IT helpdesk employee, to manipulate a target into taking an unsafe action.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>The attacker builds a story that makes the request seem normal: a new employee, an auditor, a vendor, or a boss who needs something urgently.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Requests for information the role should not need, unexplained urgency, or a story that keeps changing when questioned.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Confirm identity independently and follow the normal process. A real colleague will not mind being verified.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="threat-card-body">
-                                        <p>Fake warnings or alerts meant to frighten a user into installing malware or paying for bogus protection.</p>
-                                    </div>
-                                </div>
 
-                                <div class="threat-card" data-key="impersonation" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">06</span>
-                                        <span class="threat-card-title">Impersonation</span>
-                                        <span class="threat-card-toggle">+</span>
+                                    <div class="threat-card" data-key="baiting" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">04</span>
+                                            <span class="threat-card-title">Baiting</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Dangling something tempting, such as a link, a download, or a device, to lure a victim into compromising their own system.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>Free software, a gift card, a dropped USB drive, or a "leaked" file is offered so the target installs malware or opens a malicious document.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Anything that is too free, too easy, or too good to be true. An unknown device lying around is a classic bait.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Never plug in unknown devices. Download only from official sources, and scan files before opening them.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="threat-card-body">
-                                        <p>Posing as a trusted role, like IT staff or a coworker, to exploit a person's natural instinct to be helpful.</p>
-                                    </div>
-                                </div>
 
-                                <div class="threat-card" data-key="anti-forensics" onclick="toggleThreatCard(this)">
-                                    <div class="threat-card-head">
-                                        <span class="threat-card-index montserrat">07</span>
-                                        <span class="threat-card-title">Covering Tracks</span>
-                                        <span class="threat-card-toggle">+</span>
+                                    <div class="threat-card" data-key="scareware" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">05</span>
+                                            <span class="threat-card-title">Scareware</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Fake warnings or alerts meant to frighten a user into installing malware or paying for bogus protection.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>A pop-up claims the device is infected and offers a "fix", a phone number, or remote support. The goal is a payment or control of the device.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Alarms you cannot close, fake support numbers, and requests for remote access or payment inside a browser window.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Close the browser, run the real antivirus, and never call a number that appears in a pop-up.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="threat-card-body">
-                                        <p>The final phase of the attack lifecycle, where the attacker removes their digital traces — leaving without a trace, like in the movies.</p>
+
+                                    <div class="threat-card" data-key="impersonation" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">06</span>
+                                            <span class="threat-card-title">Impersonation</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Posing as a trusted role, like IT staff or a coworker, to exploit a person's natural instinct to be helpful.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>The attacker copies a familiar name, photo, or email address and asks for a favor or a piece of information that seems harmless on its own.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>An unusual request from someone you know, a different tone, a brand-new account, or a sudden change in contact details.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Confirm with the person using a channel you already trust, not the contact details in the suspicious message.</p>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="threat-card" data-key="smishing" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">07</span>
+                                            <span class="threat-card-title">SMiShing</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Phishing through SMS or chat using a fake delivery notice, bank alert, or prize message that wants you to tap a link.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>A short text creates urgency and includes a short link that leads to a fake login page or installs something unwanted.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Unknown numbers, shortened links, small typos, and messages about payments or accounts you never signed up for.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Do not tap links in unexpected texts. Check the claim through the official app or website, then delete and report it.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="threat-card" data-key="quid-pro-quo" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">08</span>
+                                            <span class="threat-card-title">Quid Pro Quo</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Offering a service or favor in exchange for information or access, often a fake IT support call offering to "fix" something.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>The attacker offers help or a reward and, in return, asks the target to install a remote tool or share a login.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Unsolicited support calls, no ticket number, and a request to install software or reveal credentials.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Verify the caller against a real ticket, and never install remote tools or share passwords on request.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="threat-card" data-key="tailgating" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">09</span>
+                                            <span class="threat-card-title">Tailgating</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">Physically following an authorized person through a locked door or into a restricted area.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>The attacker waits for a real employee to open the door, then slips in behind them, often while carrying something to look harmless.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>A stranger with no badge, someone "forgetting" their badge, or a person who avoids the front desk.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Badge in one person at a time, politely send visitors to reception, and report anyone who should not be there.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="threat-card" data-key="anti-forensics" onclick="toggleThreatCard(this)">
+                                        <div class="threat-card-head">
+                                            <span class="threat-card-index montserrat">10</span>
+                                            <span class="threat-card-title">Covering Tracks</span>
+                                            <span class="threat-card-toggle">+</span>
+                                        </div>
+                                        <div class="threat-card-body">
+                                            <p class="threat-card-desc">The final phase of the attack lifecycle, where the attacker removes their digital traces, leaving without a trace, like in the movies.</p>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">HOW IT WORKS</span>
+                                                <p>After gaining access, the attacker deletes logs, disables alerts, and removes signs of the intrusion so the breach is harder to notice.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">RED FLAGS</span>
+                                                <p>Missing log entries, unexplained account changes, disabled antivirus, or a system that suddenly behaves differently.</p>
+                                            </div>
+                                            <div class="threat-detail">
+                                                <span class="threat-detail-tag montserrat">DEFENSE</span>
+                                                <p>Centralize logs, monitor them regularly, and keep backup copies that an attacker cannot easily erase.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            risk: {
+                label: 'REFLECTION 03: RISK ASSESSMENT',
+                desc: 'How I learned to look at risk as likelihood and impact, and why that habit matters for every system.',
+                content: `
+                    <div class="reflection-stack">
+                        <div class="reflection-copy reflection-copy--wide">
+                            <h3>REFLECTION 03</h3>
+                            <p>I used to think of risk as simply "the bad thing that could happen." Learning about risk assessment changed that for me. Risk is really the combination of how likely a threat is and how much damage it would cause if it did happen. Putting a rating on those two ideas turns a vague worry into something a team can actually discuss, compare, and act on. I also learned that risk assessment is not about removing every possible danger. It is about seeing clearly enough to spend limited time and money where they matter most.</p>
+                            <p>Every system that stores data, and every organization that makes decisions, depends on someone choosing which risks are worth taking. Without assessment, security becomes guessing. There are also concepts I want to read more on, like the qualitative methods that use simple scales of low, medium, and high, and the quantitative methods that try to attach money and probability to a threat. I am curious about the frameworks organizations use, and about risk appetite, risk tolerance, and residual risk, which is the risk that is left over after controls are applied.</p>
+                            <p>The hardest part for me is how subjective it can feel. Two people can look at the same threat and give it different likelihood and impact ratings, and both can sound reasonable. I also find it challenging to balance a thorough assessment with a practical one, because the world keeps changing and a rating that was correct last month might not be correct today. It made me realize that risk assessment is not a one-time paper, but an ongoing habit, and that is exactly why it matters so much in the world of systems.</p>
+                        </div>
+
+                        <div class="risk-visual">
+                            <div class="risk-visual-head">
+                                <span class="section-eyebrow montserrat">A SIMPLE WAY TO THINK ABOUT IT</span>
+                                <h3>RISK = LIKELIHOOD × IMPACT</h3>
+                                <p>Risk assessment looks at how likely a threat is and how much it would hurt. Click any cell to see how the two sides combine into a risk level.</p>
+                            </div>
+
+                            <div class="risk-matrix">
+                                <span class="risk-axis-label risk-axis-label--y montserrat">LIKELIHOOD →</span>
+                                <div class="risk-grid" id="risk-grid">
+                                    <button class="risk-cell risk-moderate" data-title="Moderate Risk" data-text="Likelihood is high but the impact is low. It will probably happen, so monitor it, but it is not the first thing to fix.">Moderate</button>
+                                    <button class="risk-cell risk-high" data-title="High Risk" data-text="Likelihood is high and the impact is serious. This is where controls should be applied soon, before it becomes a real incident.">High</button>
+                                    <button class="risk-cell risk-critical" data-title="Critical Risk" data-text="Likelihood is high and the impact is severe. This needs immediate attention and the strongest controls available.">Critical</button>
+
+                                    <button class="risk-cell risk-low" data-title="Low Risk" data-text="Likelihood is medium but the impact is low. The team can accept or simply monitor this while bigger risks are handled.">Low</button>
+                                    <button class="risk-cell risk-moderate is-active" data-title="Moderate Risk" data-text="Both likelihood and impact are medium. This is the everyday kind of risk: real enough to plan for, but rarely an emergency.">Moderate</button>
+                                    <button class="risk-cell risk-high" data-title="High Risk" data-text="Likelihood is medium but the impact is high. A single event could hurt operations badly, so mitigation is worth the effort.">High</button>
+
+                                    <button class="risk-cell risk-low" data-title="Low Risk" data-text="Likelihood is low and the impact is low. Keep it on the list and check it occasionally, but it is not a priority.">Low</button>
+                                    <button class="risk-cell risk-low" data-title="Low Risk" data-text="Likelihood is low and the impact is medium. The chance is small, so monitoring is usually enough for now.">Low</button>
+                                    <button class="risk-cell risk-moderate" data-title="Moderate Risk" data-text="Likelihood is low but the impact is high. It is unlikely, but if it happens the damage is serious, so keep a recovery plan ready.">Moderate</button>
+                                </div>
+                                <span class="risk-axis-label risk-axis-label--x montserrat">IMPACT →</span>
+                            </div>
+
+                            <div class="risk-info">
+                                <span class="cube-info-label montserrat">SELECTED COMBINATION</span>
+                                <h4 id="risk-title">Moderate Risk</h4>
+                                <p id="risk-text">Both likelihood and impact are medium. This is the everyday kind of risk: real enough to plan for, but rarely an emergency.</p>
+                            </div>
+
+                            <div class="risk-legend-row montserrat">
+                                <span class="risk-legend risk-legend--low">LOW</span>
+                                <span class="risk-legend risk-legend--moderate">MODERATE</span>
+                                <span class="risk-legend risk-legend--high">HIGH</span>
+                                <span class="risk-legend risk-legend--critical">CRITICAL</span>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            audit: {
+                label: 'REFLECTION 04: INFORMATION SECURITY AUDIT',
+                desc: 'What our final project taught me about assessing an organization, not just its technology.',
+                content: `
+                    <div class="reflection-stack">
+                        <div class="reflection-copy reflection-copy--wide">
+                            <h3>REFLECTION 04</h3>
+                            <p>Before this project, I honestly thought an information security audit was just checking whether an organization had antivirus and strong passwords. I was wrong. It is a whole process of understanding the organization first: what information it handles, who owns it, where it lives, and what would happen if it were lost, leaked, or changed. I did not expect to enjoy it this much. Going through each section made me feel like I was learning how to look at an organization the way a doctor looks at a patient, not judging it, but finding where it is healthy and where it needs help.</p>
+                            <p>I am proud of how our audit came together. We identified and classified information assets using the CIA Triad, mapped threats to vulnerabilities, rated the risks, and wrote findings and recommendations that a small office could actually follow. The biggest insight I gained is that security is not only technical. Some of the most important findings were about habits, policies, and simple procedures, which showed me that a good audit has to look at people and processes, not just systems. I want to read more about established frameworks such as ISO/IEC 27001 and 27002 and the NIST Cybersecurity Framework, and about how real auditors gather and evaluate evidence, test controls, and repeat audits over time.</p>
+                            <p>The most challenging part was staying fair and realistic. It is easy to list every missing control, but much harder to recommend ones that a two-person office can actually sustain. I also felt the limits of our evidence: the findings relied heavily on what one respondent told us, and we did not do technical testing. It made me realize that an audit is only as strong as the evidence behind it, and that a good auditor has to be honest about what the assessment can and cannot prove. Still, this project made me genuinely happy, because I now know how to look at an organization and actually assess it.</p>
+                        </div>
+
+                        <div class="audit-flow">
+                            <div class="audit-flow-head">
+                                <span class="section-eyebrow montserrat">THE PROCESS I FOLLOWED</span>
+                                <h3>HOW AN AUDIT ACTUALLY FLOWS</h3>
+                                <p>Click a stage to see what happened during that part of the project.</p>
+                            </div>
+
+                            <div class="audit-steps" id="audit-steps">
+                                <button class="audit-step is-active" data-title="01 · Planning" data-text="We chose the office to audit, coordinated with the Program Coordinator, and prepared the questionnaire and the audit checklist before the interview.">
+                                    <span class="audit-step-num montserrat">01</span>
+                                    <span class="audit-step-name montserrat">PLANNING</span>
+                                </button>
+                                <button class="audit-step" data-title="02 · Information Gathering" data-text="We sent the questionnaire and checklist, collected the answers, and reviewed supporting screenshots of the repository structure and sharing settings.">
+                                    <span class="audit-step-num montserrat">02</span>
+                                    <span class="audit-step-name montserrat">GATHERING</span>
+                                </button>
+                                <button class="audit-step" data-title="03 · Analysis" data-text="We listed and classified every information asset using the CIA Triad, then described the existing controls through technology, policy, and human factors.">
+                                    <span class="audit-step-num montserrat">03</span>
+                                    <span class="audit-step-name montserrat">ANALYSIS</span>
+                                </button>
+                                <button class="audit-step" data-title="04 · Findings" data-text="We mapped threats to vulnerabilities, rated likelihood and impact, and built a risk register. The highest-rated risks became our significant findings.">
+                                    <span class="audit-step-num montserrat">04</span>
+                                    <span class="audit-step-name montserrat">FINDINGS</span>
+                                </button>
+                                <button class="audit-step" data-title="05 · Recommendations" data-text="We proposed practical controls, linked each one to the vulnerability and risk it addressed, and prioritized what the office should do first.">
+                                    <span class="audit-step-num montserrat">05</span>
+                                    <span class="audit-step-name montserrat">RECOMMENDATIONS</span>
+                                </button>
+                            </div>
+
+                            <div class="audit-flow-info">
+                                <span class="cube-info-label montserrat">SELECTED STAGE</span>
+                                <h4 id="audit-step-title">01 · Planning</h4>
+                                <p id="audit-step-text">We chose the office to audit, coordinated with the Program Coordinator, and prepared the questionnaire and the audit checklist before the interview.</p>
                             </div>
                         </div>
                     </div>
@@ -421,6 +757,8 @@
             setTimeout(() => {
                 panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 bindCubeInteraction();
+                bindRiskMatrix();
+                bindAuditSteps();
             }, 80);
         }
 
@@ -456,6 +794,62 @@
             if (defaultFace) {
                 defaultFace.click();
             }
+
+            /* Subtle 3D tilt that follows the pointer, makes the cube feel alive */
+            const svg = document.querySelector('.mcube-svg');
+            if (svg && !svg.dataset.tiltBound) {
+                svg.dataset.tiltBound = 'true';
+                const reset = () => { svg.style.transform = ''; };
+                svg.addEventListener('mousemove', e => {
+                    const r = svg.getBoundingClientRect();
+                    const px = (e.clientX - r.left) / r.width - 0.5;
+                    const py = (e.clientY - r.top) / r.height - 0.5;
+                    svg.style.transform = 'perspective(1000px) rotateY(' + (px * 16) + 'deg) rotateX(' + (-py * 12) + 'deg)';
+                });
+                svg.addEventListener('mouseleave', reset);
+            }
+        }
+
+        function bindRiskMatrix() {
+            const grid = document.getElementById('risk-grid');
+            const title = document.getElementById('risk-title');
+            const text = document.getElementById('risk-text');
+
+            if (!grid || !title || !text) return;
+
+            const cells = grid.querySelectorAll('.risk-cell');
+            cells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    cells.forEach(c => c.classList.remove('is-active'));
+                    cell.classList.add('is-active');
+                    title.textContent = cell.dataset.title;
+                    text.textContent = cell.dataset.text;
+                });
+            });
+
+            const active = grid.querySelector('.risk-cell.is-active');
+            if (active) {
+                title.textContent = active.dataset.title;
+                text.textContent = active.dataset.text;
+            }
+        }
+
+        function bindAuditSteps() {
+            const wrap = document.getElementById('audit-steps');
+            const title = document.getElementById('audit-step-title');
+            const text = document.getElementById('audit-step-text');
+
+            if (!wrap || !title || !text) return;
+
+            const steps = wrap.querySelectorAll('.audit-step');
+            steps.forEach(step => {
+                step.addEventListener('click', () => {
+                    steps.forEach(s => s.classList.remove('is-active'));
+                    step.classList.add('is-active');
+                    title.textContent = step.dataset.title;
+                    text.textContent = step.dataset.text;
+                });
+            });
         }
 
         function closePortfolioPanel() {
